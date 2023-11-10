@@ -25,6 +25,7 @@
     <link rel="stylesheet" href="./styles/nav.css" />
     <link rel="stylesheet" href="./styles/header.css" />
     <link rel="stylesheet" href="./styles/new-tweet.css" />
+    <link rel="stylesheet" href="./styles/tweets.css" />
     <!-- App CSS -->
     <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
 
@@ -42,7 +43,7 @@
       <p><b>Write</b>a new tweet</p>
       <i class="fa-solid fa-angles-down" style="color: #ee5858"></i>
     </nav>
-    <header>
+    <header class="main-header">
       <div>
         <img src="/images/profile-hex.png" />
       </div>
@@ -61,12 +62,27 @@
             id="tweet-text"
             placeholder="What are you humming about?"
           ></textarea>
-          <div class="new-tweet-footer">
+          <footer class="new-tweet-footer">
             <button type="submit" class="new-tweet-button">Tweet</button>
             <output name="counter" class="counter" for="tweet-text">140</output>
-          </div>
+          </footer>
         </form>
       </section>
+      <article>
+        <header class="tweet-header">
+          <p><i class="fa-solid fa-user"></i> Rhoda Jacobs</p>
+          <p>@MrsJacobs</p>
+        </header>
+        <textarea name="text" class="tweet-main-text">Hello world!</textarea>
+        <footer class="tweet-footer">
+          <p>10 days ago</p>
+          <div class="tweet-footer-icons">
+            <i class="fa-solid fa-retweet"></i>
+            <i class="fa-solid fa-flag"></i>
+            <i class="fa-solid fa-heart"></i>
+          </div>
+        </footer>
+      </article>
     </main>
     <script src="./scripts/composer-char-counter.js"></script>
   </body>
