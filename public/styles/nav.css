@@ -19,8 +19,13 @@ nav p {
   margin-right: 30px;
 }
 
-nav i {
+/* nav i {
   position: fixed;
   left: 830px;
   top: 76px;
+} */
+.header-rigth {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
