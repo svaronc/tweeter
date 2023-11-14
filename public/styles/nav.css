@@ -19,11 +19,9 @@ nav p {
   margin-right: 30px;
 }
 
-/* nav i {
-  position: fixed;
-  left: 830px;
-  top: 76px;
-} */
+nav i {
+  margin-top: -1rem;
+}
 .header-rigth {
   display: flex;
   flex-direction: column;
