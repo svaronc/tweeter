@@ -1,73 +1,75 @@
-/*
- * Client-side JS logic goes here
- * jQuery is already loaded
- * Reminder: Use (and do all your DOM work in) jQuery's document ready function
- */
-const renderTweets = function (tweets) {
-  for (const tw of tweets) {
-    const $tweet = createTweetElement(tw);
-    $("#tweets-container").prepend($tweet);
-  }
-};
-const createTweetElement = function (data) {
-  let tweetDay = timeago.format(data.created_at);
-  const $tweet = $(`
-<article>
-      <header class="tweet-header">
-        <p><i class="fa-solid fa-user"></i>${data.user.name}</p>
-        <p>${data.user.handle}</p>
-      </header>
-      <textarea disabled = "true" name="text" class="tweet-main-text">${data.content.text}</textarea>
-      <footer class="tweet-footer">
-        <p>${tweetDay}</p>
-        <div class="tweet-footer-icons">
-          <i class="fa-solid fa-retweet"></i>
-          <i class="fa-solid fa-flag"></i>
-          <i class="fa-solid fa-heart"></i>
-        </div>
-      </footer>
-    </article>
-`);
-  return $tweet;
-};
-
-const loadTweets = function () {
-  $.ajax({
-    type: "GET",
-    url: "/tweets",
-    dataType: "json",
-    success: function (response) {
-      console.log("loggin succes --->", response);
-      $("#tweets-container").empty();
-      renderTweets(response);
-    },
-  });
-};
-
 $(document).ready(function () {
-  loadTweets();
-  $("#new-tweet-form").on("submit", function (event) {
-    event.preventDefault();
-    let serializeData = $(this).serialize();
-    let tweetContent = $(this).find("textarea[name='text']").val();
-    console.log(serializeData);
+  const renderTweets = (tweets) => {
+    tweets.forEach((tweet) =>
+      $("#tweets-container").prepend(createTweetElement(tweet))
+    );
+  };
+
+  const createTweetElement = (data) => {
+    const tweetHtml = `
+      <article>
+        <header class="tweet-header">
+          <p><i class="fa-solid fa-user"></i>${data.user.name}</p>
+          <p>${data.user.handle}</p>
+        </header>
+        <textarea disabled="true" name="text" class="tweet-main-text">${
+          data.content.text
+        }</textarea>
+        <footer class="tweet-footer">
+          <p>${timeago.format(data.created_at)}</p>
+          <div class="tweet-footer-icons">
+            <i class="fa-solid fa-retweet"></i>
+            <i class="fa-solid fa-flag"></i>
+            <i class="fa-solid fa-heart"></i>
+          </div>
+        </footer>
+      </article>`;
+    return $(tweetHtml);
+  };
+
+  const loadTweets = () => {
+    $.ajax({
+      type: "GET",
+      url: "/tweets",
+      dataType: "json",
+      success: (response) => {
+        $("#tweets-container").empty();
+        renderTweets(response);
+      },
+      error: (error) => console.error("Error loading tweets:", error),
+    });
+  };
+
+  const submitNewTweet = () => {
+    const serializeData = $("#new-tweet-form").serialize();
+    const tweetContent = $("#new-tweet-form textarea[name='text']").val();
+
     if (!tweetContent) {
-      alert("your tweet is empty, please write something");
+      alert("Your tweet is empty, please write something.");
       return;
     }
+
     if (tweetContent.length > 140) {
-      alert("your tweet is too long");
+      alert("Your tweet is too long.");
       return;
     }
+
     $.ajax({
       type: "POST",
       url: "/tweets",
       data: serializeData,
-      success: function () {
-        loadTweets();
-      },
+      success: loadTweets,
+      error: (error) => console.error("Error submitting tweet:", error),
     });
+
     $("#new-tweet-form textarea[name='text']").val("");
     $(".counter").text(140);
+  };
+
+  loadTweets();
+
+  $("#new-tweet-form").on("submit", function (event) {
+    event.preventDefault();
+    submitNewTweet();
   });
 });
