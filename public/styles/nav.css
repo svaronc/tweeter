@@ -2,7 +2,7 @@ nav {
   display: flex;
   height: 120px;
   width: 100vw;
-  background-color: #2B3499;
+  background-color: #2b3499;
   color: #ffffff;
   justify-content: space-between;
   position: fixed;
@@ -18,9 +18,18 @@ nav p {
   align-self: center;
   margin-right: 30px;
 }
-
+@keyframes moveUpDown {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(10px);
+  }
+}
 nav i {
   margin-top: -1rem;
+  animation: moveUpDown 1.5s ease-in-out infinite;
 }
 .header-rigth {
   display: flex;
