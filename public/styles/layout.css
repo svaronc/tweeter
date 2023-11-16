@@ -31,3 +31,19 @@ main {
   margin: auto;
   background-color: #f4f1ec;
 }
+
+.error-text {
+  border: 5px solid;
+  border-color: red;
+  margin-top: 25px;
+  text-align: center;
+}
+
+.error-text p {
+  font-weight: bold;
+  color: red;
+}
+
+.error-hide {
+  display: none;
+}

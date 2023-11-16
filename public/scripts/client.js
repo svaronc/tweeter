@@ -50,8 +50,10 @@ $(document).ready(function () {
     }
 
     if (tweetContent.length > 140) {
-      alert("Your tweet is too long.");
+      $(".error-text").slideDown();
       return;
+    } else {
+      $(".error-text").slideUp();
     }
 
     $.ajax({
@@ -61,7 +63,7 @@ $(document).ready(function () {
       success: loadTweets,
       error: (error) => console.error("Error submitting tweet:", error),
     });
-
+    $(".error-text").slideUp();
     $("#new-tweet-form textarea[name='text']").val("");
     $(".counter").text(140);
   };
