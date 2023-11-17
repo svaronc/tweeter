@@ -44,6 +44,19 @@ main {
   color: red;
 }
 
-.error-hide {
+.hide {
   display: none;
+}
+
+#up-button {
+  width: 80px;
+  height: 80px;
+  background-color: #2b3499;
+  color: white;
+  border-radius: 50%;
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  cursor: pointer;
+  border: none;
 }

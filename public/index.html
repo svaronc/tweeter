@@ -61,11 +61,11 @@
       </div>
     </header>
     <!-- Page-specific (main) content here -->
-    <div class="error-text error-hide">
+    <div class="error-text hide">
       <p> 🚫 Your tweet is too long, the limit is 140 chars 🚫 </p>
     </div>
     <main class="container">
-      <section class="new-tweet error-hide">
+      <section class="new-tweet hide">
         <h2>Compose Tweet</h2>
         <form id="new-tweet-form">
           <textarea
@@ -80,6 +80,7 @@
         </form>
       </section>
       <section id="tweets-container"> </section>
+      <button type="button" id="up-button" class="hide"><i class="fa-solid fa-angles-up fa-bounce" style="color: #ffffff;"></i><Up</button>
     </main>
     <script src="./scripts/composer-char-counter.js"></script>
   </body>
