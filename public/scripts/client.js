@@ -74,4 +74,7 @@ $(document).ready(function () {
     event.preventDefault();
     submitNewTweet();
   });
+  $(".header-rigth").on("click", function () {
+    $(".new-tweet").toggle("slow");
+  });
 });

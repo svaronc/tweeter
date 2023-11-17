@@ -30,6 +30,11 @@ nav p {
 nav i {
   margin-top: -1rem;
   animation: moveUpDown 1.5s ease-in-out infinite;
+  color: #ee5858;
+}
+
+nav i:hover {
+  color: #ffffff;
 }
 .header-rigth {
   display: flex;
