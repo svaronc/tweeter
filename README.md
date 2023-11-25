@@ -1,8 +1,12 @@
 # Tweeter Project
 
-Tweeter is a simple, single-page Twitter clone.
+Welcome to our Single-Page Twitter Clone! This project is a lightweight, yet feature-rich, replica of the popular social media platform, Twitter. Designed with simplicity and efficiency in mind, our clone provides a seamless user experience, replicating the core functionalities of Twitter in a single-page application.
 
-This repository is the starter code for the project: Students will fork and clone this repository, then build upon it to practice their HTML, CSS, JS, jQuery and AJAX front-end skills, and their Node, Express back-end skills.
+## Features
+
+- Tweet Posting: Users can compose and post tweets, with a character limit to encourage concise sharing.
+- Timeline: A real-time feed displays tweets from users, showcasing the latest updates in a dynamic, scrollable timeline.
+- Responsive Design: Crafted for optimal viewing on a range of devices, ensuring a smooth experience on both mobile and desktop.
 
 ## Getting Started
 
@@ -19,6 +23,8 @@ This repository is the starter code for the project: Students will fork and clon
 
 ## Final design 
 
+- Phone layout
 !["Phone layput"](https://github.com/svaronc/tweeter/blob/master/docs/phone.png)
 
+- Desktop layout
 !["Desktop layput"](https://github.com/svaronc/tweeter/blob/master/docs/desktop.png)
