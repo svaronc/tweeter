@@ -17,4 +17,8 @@ This repository is the starter code for the project: Students will fork and clon
 - Express
 - Node 5.10.x or above
 
-## 
+## Final design 
+
+!["Phone layput"](https://github.com/svaronc/tweeter/blob/master/docs/phone.png)
+
+!["Desktop layput"](https://github.com/svaronc/tweeter/blob/master/docs/desktop.png)
