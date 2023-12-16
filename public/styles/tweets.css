@@ -20,9 +20,10 @@
 article {
   border: 3px solid;
   margin-top: 50px;
+}
+article:hover {
   box-shadow: 6px 6px 2px 1px rgba(43, 52, 153, 0.56);
 }
-
 .tweet-main-text:placeholder-shown {
   font-family: "Source+Sans", sans-serif;
   font-weight: 600;
